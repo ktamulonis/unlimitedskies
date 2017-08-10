@@ -46,6 +46,35 @@
 // resort if you really truly can't style your content more generally.
 // @import 'sections/profile_page';
 
+$brand-primary: darken(#f48c42, 6.5%);
+
+$navbar-default-bg: black;
+$navbar-default-border: white;
+$navbar-default-link-color: #f48c42;
+
+$navbar-default-link-hover-bg: lighten( $brand-primary, 50% );
+$navbar-default-link-active-bg: lighten( $brand-primary, 30% );
+
+$body-bg: white;
+
+$slideup-navbar-height: 150px;
+
+$border-radius-base: 2px;
+$border-radius-large: 2px;
+
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+@import 'components/slideup_header';
+
+// $slideup-navbar-height: $navbar-height !default;
+
+header {
+  height: 0;
+}
+.affix-top .navbar {
+  background: transparent;
+}
 
 video {
   object-fit: cover;
@@ -54,6 +83,7 @@ video {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: -1;
 }
 
 html, body {
@@ -94,6 +124,7 @@ h1 {
 
 main {
   background: rgba(black, 0.66);
+  text-align: center;
   color: white;
   position: relative;
   padding: 1rem;
@@ -101,4 +132,21 @@ main {
     max-width: 600px;
     margin: 1rem auto;
   }
+}
+
+.btn-lg {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+
+.inner-column {
+  text-align: center;
+  @extend .col-sm-8;
+  @extend .col-sm-offset-2;
+}
+
+
+.logo-nav{
+  height: 30px;
 }
