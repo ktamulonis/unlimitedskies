@@ -10,3 +10,40 @@
     %p Ready for a change of perspective? Our professionally licensed aerial artist's specialize in finding that special view. Whether your selling your or marketing your home or vacation rental, or capturing an adventure or event, the skies unlimited!
     .inner-column
       = link_to "easy order", "#message_form", "data-toggle" => "modal", class: "btn btn-primary btn-lg"
+
+//-------Message Form Below--------
+
+
+#message_form.modal.fade{:role => "dialog"}
+  .modal-dialog
+    / Modal content
+    .modal-content
+      .modal-header
+        %button.close{"data-dismiss" => "modal", :type => "button"} ×     
+
+      .modal-body
+        %h2 Title will go here
+        .panel-body
+          %h2 Form Will Go here
+          %p address fields
+        .panel-footer
+          %p thank you will go here
+          .buttons
+
+//---------Pilot Form Below------
+
+#pilot_form.modal.fade{:role => "dialog"}
+  .modal-dialog
+    / Modal content
+    .modal-content
+      .modal-header
+        %button.close{"data-dismiss" => "modal", :type => "button"} ×
+        
+      .modal-body
+        %h2 Title will go here
+        .panel-body
+          %h2 Form Will Go here
+          %p address fields
+        .panel-footer
+          %p thank you will go here
+          .buttons
