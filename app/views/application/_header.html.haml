@@ -5,11 +5,11 @@
         = link_to root_path do
           %span
             =image_tag('https://s3.amazonaws.com/unlimitedskiesdrone/logo.png', class: "logo-nav")
-            Unlimited Skies Drone | Home 
+            Unlimited Skies
       = horizontal do
         = nav class: 'navbar-right' do
-          = link_to "tel:2098376634", class: "btn btn" do
-            %i.glyphicon.glyphicon-earphone
-          = link_to 'ARTISTS', "#artist_form", "data-toggle" => "modal", class: 'center'
           = link_to 'CLIENTS', "#client_form", "data-toggle" => "modal", class: 'center'
+          = link_to 'ARTISTS', "#artist_form", "data-toggle" => "modal", class: 'center'
+          = link_to "tel:2098376634", class: "btn btn" do
+            %span.glyphicon.glyphicon-earphone
         / USER NAV
