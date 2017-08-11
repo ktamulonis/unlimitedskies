@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate 
+  before_action :authenticate, except: [:new, :create]
   respond_to :html, :json, :js
 
   def index
@@ -21,7 +21,8 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.save
     ClientMailer.artist_request_email(@order).deliver_later
-    respond_with(@order)
+    redirect_to(root_path)
+    flash[:notice] = 'Your request was successfully sent! A copy of it should be in your email'
   end 
 
   def update

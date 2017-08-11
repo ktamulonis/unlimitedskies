@@ -1,7 +1,6 @@
- 
- 
-class ArtistsController < ApplicationController
+ class ArtistsController < ApplicationController
   before_action :set_artist, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate, except: [:new, :create]
 
   respond_to :html, :json, :js
 
@@ -23,7 +22,7 @@ class ArtistsController < ApplicationController
     @artist = Artist.new(artist_params)
     @artist.save
     ArtistMailer.join_team_email(@artist).deliver_later
-    respond_with(@artist)
+    redirect_to(root_path)
   end 
 
   def update
