@@ -1,0 +1,31 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %h1
+      Welcome to the team, #{@artist.name}
+    %p 
+      You are now in our system, and will notified when clients requests an aerial artist within #{@artist.distance} miles of #{@artist.location} 
+      %br/
+    %p 
+      Here is the contact info you submitted.
+
+    %dl.dl-horizontal
+      %dt Phone:
+      %dd #{@artist.phone}
+      %br/
+      %dt Email:
+      %dd #{@artist.email}
+      %br/
+      %dt Equipment:
+      %dd #{@artist.drone}
+      %br/
+      %dt Location:
+      %dd #{@artist.location}
+      %br/
+      %dt Distance:
+      %dd #{@artist.distance}
+      %br/
+
+    = image_tag 'https://s3.amazonaws.com/unlimitedskiesdrone/logo.png'

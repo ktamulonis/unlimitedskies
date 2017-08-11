@@ -1,17 +1,8 @@
-Thanks for reaching out, @order.name
-    %p
-      Your message has been successfully recieved, and we will have an Aeriel Artist contact you regarding scheduleding a time that works with your schedule. 
-      %br/
-    %p 
-      Here is a copy of your request.
+Thanks for reaching out, =@order.name
+Your message has been successfully recieved, and we will have an Aeriel Artist contact you regarding scheduleding a time that works with your schedule. 
 
-    %dl.dl-horizontal
-      %dt Phone:
-      %dd= @order.phone
-      %br/
-      %dt Location:
-      %dd= @order.location
-      %br/
-      %dt Special:
-      %dd= @order.special
-      %br/
+Here is a copy of your request.
+Phone: =@order.phone
+Location:= @order.location
+Special:= @order.special
+

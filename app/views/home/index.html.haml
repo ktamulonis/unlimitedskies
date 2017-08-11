@@ -11,7 +11,7 @@
     .inner-column
       = link_to "Schedule", "#client_form", "data-toggle" => "modal", class: "btn btn-primary btn-lg"
 
-//-------Message Form Below--------
+//-------Client Form Below--------
 
 
 #client_form.modal.fade{:role => "dialog"}
@@ -23,7 +23,7 @@
         %button.close{"data-dismiss" => "modal", :type => "button"} ×     
 
       .modal-body
-        %h2.center Schedule an Aerial Artist
+        %h2.center Request an Aerial Artist
         .panel-body
           = simple_form_for(@order) do |f|
             = f.error_notification
@@ -42,20 +42,33 @@
           %p.center an artist will contact you within 1 day to schedule a time that works
           .buttons
 
-//---------Pilot Form Below------
+//---------Artist Form Below------
 
-#pilot_form.modal.fade{:role => "dialog"}
+#artist_form.modal.fade{:role => "dialog"}
   .modal-dialog
     / Modal content
     .modal-content
       .modal-header
+        =image_tag('https://s3.amazonaws.com/unlimitedskiesdrone/logo.png', class: "logo-nav")
         %button.close{"data-dismiss" => "modal", :type => "button"} ×
         
       .modal-body
-        %h2 Title will go here
+        %h2.center Aerial Artist? Sign up here!
         .panel-body
-          %h2 Form Will Go here
-          %p address fields
-        .panel-footer
-          %p thank you will go here
+          = simple_form_for(@artist) do |f|
+            = f.error_notification
+
+            .form-inputs
+              = f.input :name
+              = f.input :email
+              = f.input :drone
+              = f.input :phone
+              = f.input :location
+              = f.input :distance
+
+            .form-actions.center
+              = f.button :submit, "Send", class: 'btn-lg'
+
+        .panel-footer.center
+          %p Make money doing what you love!
           .buttons

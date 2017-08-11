@@ -1,0 +1,24 @@
+.container
+  .page-header
+    = link_to artists_path, :class => 'btn btn-default' do
+      %span.glyphicon.glyphicon-list-alt
+      Back
+    = link_to edit_artist_path(@artist), :class => 'btn btn-primary' do
+      %span.glyphicon.glyphicon-pencil
+      Edit
+    %h1 Show artist
+
+  %dl.dl-horizontal
+    %dt Name:
+    %dd= @artist.name
+    %dt Email:
+    %dd= @artist.email
+    %dt Drone:
+    %dd= @artist.drone
+    %dt Phone:
+    %dd= @artist.phone
+    %dt Location:
+    %dd= @artist.location
+    %dt Distance:
+    %dd= @artist.distance
+

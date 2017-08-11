@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
   def index
   	@order = Order.new
-  end
+  	@artist = Artist.new
+  end 
+  
 end

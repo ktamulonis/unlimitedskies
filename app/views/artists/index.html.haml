@@ -1,0 +1,33 @@
+.container
+  .page-header
+    = link_to new_artist_path, :class => 'btn btn-primary' do
+      %span.glyphicon.glyphicon-plus
+      New Artist
+    %h1 Listing artists
+
+  .table-responsive
+    %table.table.table-striped.table-bordered.table-hover
+      %thead
+        %tr
+          %th Name
+          %th Email
+          %th Drone
+          %th Phone
+          %th Location
+          %th Distance
+          %th
+          %th
+          %th
+
+      %tbody
+        - @artists.each do |artist|
+          %tr
+            %td= artist.name
+            %td= artist.email
+            %td= artist.drone
+            %td= artist.phone
+            %td= artist.location
+            %td= artist.distance
+            %td= link_to 'Show', artist
+            %td= link_to 'Edit', edit_artist_path(artist)
+            %td= link_to 'Destroy', artist, :data => { confirm: 'Are you sure?' }, :method => :delete
