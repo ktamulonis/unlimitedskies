@@ -1,5 +1,5 @@
 class ArtistMailer < ApplicationMailer
-  	default from: 'sales@unlimitedskiesdrone.com'
+  	default from: 'talentaquisition@unlimitedskiesdrone.com'
 	def join_team_email(artist)
       @artist = artist
       email_with_name = %("#{@artist.name}" <#{@artist.email}>)
