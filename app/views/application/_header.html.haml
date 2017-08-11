@@ -3,11 +3,13 @@
     = navbar id: "navbar", fluid: true, position: :top, padding: 0 do
       = vertical do
         = link_to root_path do
-          = horizontal do
+          %span
             =image_tag('https://s3.amazonaws.com/unlimitedskiesdrone/logo.png', class: "logo-nav")
             Unlimited Skies Drone | Home 
       = horizontal do
         = nav class: 'navbar-right' do
-          = link_to 'ARTISTS', "#artist_form", "data-toggle" => "modal"
-          = link_to 'CLIENTS', "#client_form", "data-toggle" => "modal"
+          = link_to "tel:2098376634", class: "btn btn" do
+            %i.glyphicon.glyphicon-earphone
+          = link_to 'ARTISTS', "#artist_form", "data-toggle" => "modal", class: 'center'
+          = link_to 'CLIENTS', "#client_form", "data-toggle" => "modal", class: 'center'
         / USER NAV
