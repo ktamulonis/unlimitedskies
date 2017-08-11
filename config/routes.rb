@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :orders
   root 'home#index'
 
   get 'setup/index'

@@ -6,28 +6,40 @@
       %span drone
 
   %main
-    %h1 Aerial Photography
-    %p Ready for a change of perspective? Our professionally licensed aerial artist's specialize in finding that special view. Whether your selling your or marketing your home or vacation rental, or capturing an adventure or event, the skies unlimited!
+    %h1 Aerial Artistry
+    %p Ready for a change of perspective? Our professionally licensed aerial artist's specialize in finding that special view. Whether your selling or marketing your home or vacation rental, or capturing an adventure or event, the skies unlimited!
     .inner-column
-      = link_to "easy order", "#message_form", "data-toggle" => "modal", class: "btn btn-primary btn-lg"
+      = link_to "Schedule", "#client_form", "data-toggle" => "modal", class: "btn btn-primary btn-lg"
 
 //-------Message Form Below--------
 
 
-#message_form.modal.fade{:role => "dialog"}
+#client_form.modal.fade{:role => "dialog"}
   .modal-dialog
     / Modal content
     .modal-content
       .modal-header
+        =image_tag('https://s3.amazonaws.com/unlimitedskiesdrone/logo.png', class: "logo-nav")
         %button.close{"data-dismiss" => "modal", :type => "button"} ×     
 
       .modal-body
-        %h2 Title will go here
+        %h2.center Schedule an Aerial Artist
         .panel-body
-          %h2 Form Will Go here
-          %p address fields
+          = simple_form_for(@order) do |f|
+            = f.error_notification
+
+            .form-inputs
+              = f.input :name
+              = f.input :email
+              = f.input :phone
+              = f.input :location
+              = f.input :special, label: 'Special Request'
+
+            .form-actions.center
+              = f.button :submit, "request", class: 'btn-lg'
+
         .panel-footer
-          %p thank you will go here
+          %p.center an artist will contact you within 1 day to schedule a time that works
           .buttons
 
 //---------Pilot Form Below------
