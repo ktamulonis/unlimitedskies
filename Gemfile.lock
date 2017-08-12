@@ -7,6 +7,14 @@ GIT
       rails (~> 5.1)
       thor
 
+GIT
+  remote: https://github.com/scambra/devise_invitable.git
+  revision: 5b66cfb3063339a6370f6e27169b36ecf14bcfae
+  specs:
+    devise_invitable (1.7.2)
+      actionmailer (>= 4.1.0)
+      devise (>= 4.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -372,6 +380,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   database_cleaner
   devise (~> 4.2)
+  devise_invitable!
   dotenv-rails
   factory_girl_rails
   faker

@@ -21,7 +21,7 @@ class User < ApplicationRecord
   has_many :identities, dependent: :destroy
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :omniauthable, :database_authenticatable, :registerable,
+  devise :invitable, :omniauthable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable
   def facebook
     identities.where( :provider => "facebook" ).first

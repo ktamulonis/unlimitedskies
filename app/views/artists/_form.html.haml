@@ -2,12 +2,12 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :name
-    = f.input :email, type: "email"
-    = f.input :drone
-    = f.input :phone
-    = f.input :location
-    = f.input :distance
+    = f.input :name, required: true
+    = f.input :email, type: "email", required: true
+    = f.input :drone, required: true
+    = f.input :phone, required: true
+    = f.input :location, required: true
+    = f.input :distance, required: true
 
   .form-actions
     = f.button :submit

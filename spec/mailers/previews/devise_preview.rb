@@ -23,6 +23,6 @@ class DevisePreview < ActionMailer::Preview
 
   protected
     def user
-      User.first || User.new( email: "will@happyfuncorp.com" )
+      User.first || User.new( email: "sales@unlimitedskiesdrone.com" )
     end
 end
