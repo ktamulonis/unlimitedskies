@@ -20,8 +20,8 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.save
+    ClientMailer.artist_request_email(@order).deliver_later
     redirect_to(root_path)
-    ClientMailer.artist_request_email(@order).deliver_now
     flash[:notice] = 'Your request was successfully sent! A copy of it should be in your email'
   end 
 
