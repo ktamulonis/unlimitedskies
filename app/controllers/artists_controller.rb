@@ -21,7 +21,7 @@
   def create
     @artist = Artist.new(artist_params)
     @artist.save
-    ArtistMailer.join_team_email(@artist).deliver_later
+    ArtistMailer.join_team_email(@artist).deliver_now
     redirect_to(root_path)
     flash[:notice] = 'Your information is being processed, our talent aquisition team will reach out to you via email'
   end 
