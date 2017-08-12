@@ -153,3 +153,13 @@ main {
 .center {
   text-align: center;
 }
+
+.user_avatar {
+    width:auto;
+    height:auto;
+    max-width:30px;
+    max-height:30px;
+    border-radius: 50%;
+    text-align: right;
+}
+

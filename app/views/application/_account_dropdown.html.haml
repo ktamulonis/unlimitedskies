@@ -1,5 +1,10 @@
 %li.dropdown
   %a.dropdown-toggle{ "href" => "#", "data-toggle"=>"dropdown", "role" => "button", "aria-expanded"=>"false"}
+    -if user_signed_in?
+      - if current_user.image
+        = image_tag current_user.image, class: 'user_avatar'
+      - else
+        = current_user.email
     Account <span class="caret"></span>
   %ul.dropdown-menu
     - if user_signed_in?
