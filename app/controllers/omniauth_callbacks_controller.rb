@@ -1,4 +1,5 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  before_action :authenticate
   def facebook
     generic_callback( 'facebook' )
   end
@@ -19,6 +20,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     if @user.persisted?
       @identity.update_attribute( :user_id, @user.id )
+      @user.update_attribute( :image, @identity.image )
       sign_in_and_redirect @user, event: :authentication
       set_flash_message(:notice, :success, kind: provider.capitalize) if is_navigational_format?
     else

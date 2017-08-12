@@ -12,4 +12,6 @@
           = link_to 'ARTISTS', "#artist_form", "data-toggle" => "modal", class: 'center'
           = link_to "tel:2098376634", class: "btn btn" do
             %span.glyphicon.glyphicon-earphone
-          //= render partial: "application/account_dropdown"
+          // ---------------------for testing purposes don't give people an account link yet------------------------//  
+          -if user_signed_in?
+            = render partial: "application/account_dropdown"
