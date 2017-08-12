@@ -22,7 +22,7 @@ class OrdersController < ApplicationController
     @order.save
     ClientMailer.artist_request_email(@order).deliver_later
     redirect_to(root_path)
-    flash[:notice] = 'Your request was successfully sent! A copy of it should be in your email'
+    flash[:notice] = 'Your request was successfully sent!'
   end 
 
   def update

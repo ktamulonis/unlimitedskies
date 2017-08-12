@@ -23,7 +23,7 @@
     @artist.save
     ArtistMailer.join_team_email(@artist).deliver_later
     redirect_to(root_path)
-    flash[:notice] = 'Your information is being processed, our talent aquisition team will reach out to you via email'
+    flash[:notice] = 'Your information is being processed'
   end 
 
   def update
