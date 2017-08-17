@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks', registrations: 'registrations',  }
   resources :artists
-  resources :orders
+  resources :orders do
+    resources :images
+  end
+  
   root 'home#index'
 
   get 'setup/index'

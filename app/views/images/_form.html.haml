@@ -1,0 +1,10 @@
+= simple_form_for([@order, @order.images.build]) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :title
+    = f.input :description
+    = f.file_field :pic
+
+  .form-actions
+    = f.button :submit
