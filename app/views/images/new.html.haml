@@ -1,0 +1,9 @@
+.container
+  .page-header
+    = link_to order_images_path(@order), :class => 'btn btn-default' do
+      %span.glyphicon.glyphicon-list-alt
+      Back
+    %h1 New image
+
+  = render 'form'
+

@@ -1,0 +1,19 @@
+.container
+  .page-header
+    = link_to order_images, :class => 'btn btn-default' do
+      %span.glyphicon.glyphicon-list-alt
+      Back
+    = link_to edit_order_image(@order,(@image)), :class => 'btn btn-primary' do
+      %span.glyphicon.glyphicon-pencil
+      Edit
+    %h1 Show image
+
+  %dl.dl-horizontal
+    %dt Title:
+    %dd= @image.title
+    %dt Description:
+    %dd= @image.description
+    %dt Order:
+    %dd= @image.order
+    
+

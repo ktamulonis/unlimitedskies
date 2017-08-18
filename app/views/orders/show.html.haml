@@ -7,7 +7,7 @@
       %span.glyphicon.glyphicon-pencil
       Edit
     %h1 Show order
-
+  
   %dl.dl-horizontal
     %dt Name:
     %dd= @order.name
@@ -19,4 +19,10 @@
     %dd= @order.location
     %dt Special:
     %dd= @order.special
+
+  -if user_signed_in? 
+    = link_to new_order_image_path(@order), :class => 'btn btn-primary' do
+      %span.glyphicon.glyphicon-camera
+  .row.images
+    = render @order.images.order("created_at DESC")
 
