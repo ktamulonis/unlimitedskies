@@ -9,65 +9,6 @@
     %p Ready for a change of perspective? Our professionally licensed aerial artist's specialize in finding that special view. Whether your selling or marketing your home or vacation rental, or capturing an adventure or event, the skies unlimited!
     .inner-column
       = link_to "Schedule", "#client_form", "data-toggle" => "modal", class: "btn btn-primary btn-lg"
-
-//-------Client Form Below--------
-
-
-#client_form.modal.fade{:role => "dialog"}
-  .modal-dialog
-    / Modal content
-    .modal-content
-      .modal-header
-        =image_tag('https://s3.amazonaws.com/unlimitedskiesdrone/logo.png', class: "logo-nav")
-        %button.close{"data-dismiss" => "modal", :type => "button"} ×     
-
-      .modal-body
-        %h2.center Request an Aerial Artist
-        .panel-body
-          = simple_form_for(@order) do |f|
-            = f.error_notification
-
-            .form-inputs
-              = f.input :name
-              = f.input :email
-              = f.input :phone
-              = f.input :location
-              = f.input :special, label: 'Special Request'
-
-            .form-actions.center
-              = f.button :submit, "request", class: 'btn-lg'
-
-        .panel-footer
-          %p.center an artist will contact you within 1 day to schedule a time that works
-          .buttons
-
-//---------Artist Form Below------
-
-#artist_form.modal.fade{:role => "dialog"}
-  .modal-dialog
-    / Modal content
-    .modal-content
-      .modal-header
-        =image_tag('https://s3.amazonaws.com/unlimitedskiesdrone/logo.png', class: "logo-nav")
-        %button.close{"data-dismiss" => "modal", :type => "button"} ×
-        
-      .modal-body
-        %h2.center Aerial Artist? Sign up here!
-        .panel-body
-          = simple_form_for(@artist) do |f|
-            = f.error_notification
-
-            .form-inputs
-              = f.input :name
-              = f.input :email
-              = f.input :drone
-              = f.input :phone
-              = f.input :location
-              = f.input :distance, label: 'Distance you are willing to travel'
-
-            .form-actions.center
-              = f.button :submit, "Send", class: 'btn-lg'
-
-        .panel-footer.center
-          %p Make money doing what you love!
-          .buttons
+//----------For now make sure to sync index and gallery refactor later when smart--------//
+= render partial: "client_form_modal"
+= render partial: "artist_form_modal"

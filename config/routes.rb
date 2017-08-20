@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
   
   root 'home#index'
-
+  get 'home/gallery'
   get 'setup/index'
   get '/setup/open' => 'setup#open'
   post '/setup/generate' => 'setup#generate'

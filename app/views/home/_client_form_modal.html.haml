@@ -1,0 +1,27 @@
+#client_form.modal.fade{:role => "dialog"}
+  .modal-dialog
+    / Modal content
+    .modal-content
+      .modal-header
+        =image_tag('https://s3.amazonaws.com/unlimitedskiesdrone/logo.png', class: "logo-nav")
+        %button.close{"data-dismiss" => "modal", :type => "button"} ×     
+
+      .modal-body
+        %h2.center Request an Aerial Artist
+        .panel-body
+          = simple_form_for(@order) do |f|
+            = f.error_notification
+
+            .form-inputs
+              = f.input :name
+              = f.input :email
+              = f.input :phone
+              = f.input :location
+              = f.input :special, label: 'Special Request'
+
+            .form-actions.center
+              = f.button :submit, "request", class: 'btn-lg'
+
+        .panel-footer
+          %p.center an artist will contact you within 1 day to schedule a time that works
+          .buttons
