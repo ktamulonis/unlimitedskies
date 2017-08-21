@@ -5,15 +5,18 @@
   .row.black
     .row__inner
       - @images.each do |image|
-        .tile
-          .tile__media 
-            =link_to image_tag(image.pic(:medium)), image.pic(:large)
-            .tile__details
-              -if image.description
-                = image.description
-              .tile__title
-                -if image.title
-                  = image.title
+        =link_to order_image_path(image.order_id, image.id) do 
+          .tile
+            .tile__media 
+              =image_tag(image.pic(:medium))
+              .tile__details
+                -if image.description
+                  = image.description
+                .tile__title
+                  -if image.title
+                    = image.title
+                
+
 
 = render partial: "client_form_modal"
 = render partial: "artist_form_modal"
