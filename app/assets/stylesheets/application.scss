@@ -50,7 +50,7 @@ $brand-primary: darken(#f48c42, 6.5%);
 
 $navbar-default-bg: black;
 $navbar-default-border: white;
-$navbar-default-link-color: #f48c42;
+$navbar-default-link-color: white;
 
 $navbar-default-link-hover-bg: lighten( $brand-primary, 50% );
 $navbar-default-link-active-bg: lighten( $brand-primary, 30% );
@@ -96,6 +96,7 @@ html {
 }
 
 .viewport-header {
+  height:100vh;
   position: relative;
   text-align: center;
   display: flex;
