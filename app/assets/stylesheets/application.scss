@@ -96,7 +96,7 @@ html {
 }
 
 .viewport-header {
-  height:35vh;
+  height:100vh;
   position: relative;
   text-align: center;
   display: flex;
@@ -309,4 +309,7 @@ a:hover {
 }
 .logo-blue{
   background-color:#5a75e0;
+}
+#footer{
+  background-color:black;
 }
