@@ -1,15 +1,14 @@
-%body
-  %video{:autoplay => "", :loop => "", :muted => "", :playsinline => "", :src => "https://s3.amazonaws.com/swansisland/swans_island.mp4", :type => "video/webm"}
-  %header.viewport-header
-    %h1
-      Unlimited Skies
+%video{:autoplay => "", :loop => "", :muted => "", :playsinline => "", :src => "https://s3.amazonaws.com/swansisland/swans_island.mp4", :type => "video/webm"}
+%header.viewport-header
+  %h1
+    Unlimited Skies
   
       
-  %main
-    %h1 Aerial Artistry
-    %p Ready for a change of perspective? Our professionally licensed aerial artist's specialize in finding that special view. Whether your selling or marketing your home or vacation rental, or capturing an adventure or event, the skies unlimited!
-    .inner-column
-      = link_to "Schedule", "#client_form", "data-toggle" => "modal", class: "btn btn-primary btn-lg"
+%main
+  %h1 Aerial Artistry
+  %p Ready for a change of perspective? Our professionally licensed aerial artist's specialize in finding that special view. Whether your selling or marketing your home or vacation rental, or capturing an adventure or event, the skies unlimited!
+  .inner-column
+    = link_to "Schedule", "#client_form", "data-toggle" => "modal", class: "btn btn-primary btn-lg"
 //----------For now make sure to sync index and gallery refactor later when smart--------//
 = render partial: "client_form_modal"
 = render partial: "artist_form_modal"
